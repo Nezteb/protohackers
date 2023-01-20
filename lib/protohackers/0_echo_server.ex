@@ -1,4 +1,5 @@
 defmodule Protohackers.EchoServer do
+  @moduledoc false
   use GenServer
   require Logger
 
@@ -18,8 +19,9 @@ defmodule Protohackers.EchoServer do
 
     listen_options = [
       ifaddr: {0, 0, 0, 0},
+      # Receives data as binaries (instead of lists)
       mode: :binary,
-      # Allow host/port reuse
+      # Allow host/port reuse the listener crashes
       reuseaddr: true,
       # Require explicit calls to recv
       active: false,
