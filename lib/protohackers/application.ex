@@ -10,7 +10,8 @@ defmodule Protohackers.Application do
     children = [
       # Starts a worker by calling: Protohackers.Worker.start_link(arg)
       # {Protohackers.Worker, arg}
-      Protohackers.EchoServer
+      Protohackers.EchoServer,
+      Protohackers.PrimeServer
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
